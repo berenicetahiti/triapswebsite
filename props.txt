@@ -1,4 +1,4 @@
-cd C:\Users\beren\Desktop\monsite
+cd C:\Users\beren\Desktop\triapswebsite
 php -S localhost:8000
 
 le probleme vient du fait que c'est navigation.js qui est exécuté et pas navigation création . js !
