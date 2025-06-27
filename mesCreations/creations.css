@@ -1,0 +1,37 @@
+#content-container {
+    margin-top: 10px;
+    padding: 10px;
+    border-top: 2px solid #ddd;
+    background-color: #f9f9f9;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* animation lors du clic de l'image d'un projet*/
+#content-container.visible {
+    opacity: 1;
+    transform: translateY(0); /*Conteneur revient à sa position normale*/ 
+}
+
+/* Au clic d'une image d'un projet, on cache en fondu celle sélectionnée précédement */
+#content-container.hidden {
+    opacity: 0;
+    transform: translateY(10px); /* décalage vers le bas */
+    pointer-events: none; /* Désactive les interactions pendant la transition */
+}
+
+.gallery-image:hover {
+    transform: scale(1.2);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+
+.gallery-image {
+    width: auto; /* Largeur en pixels */
+    height: 200px;  /* Garde le ratio d'origine */
+    margin: 5px;   /* Espacement entre les images */
+    border-radius: 10px; /* Coins arrondis (optionnel) */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer; /* Change le curseur en main */
+}

@@ -1,0 +1,4 @@
+cd C:\Users\beren\Desktop\monsite
+php -S localhost:8000
+
+le probleme vient du fait que c'est navigation.js qui est exécuté et pas navigation création . js !
