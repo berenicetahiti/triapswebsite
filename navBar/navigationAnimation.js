@@ -1,7 +1,7 @@
 
 document.addEventListener("DOMContentLoaded", function() {
     // Charger la navbar
-    fetch("/navBar/navbar.html")
+    fetch("navBar/navbar.html")
         .then(response => response.text())
         .then(data => document.getElementById("navBar").innerHTML = data)
         .catch(error => console.error("Erreur de chargement de la navbar :", error));
