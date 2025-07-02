@@ -4,35 +4,121 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/styles.css">
+    <style>
+        .phone-mockup {
+            width: 200px;
+            height: 355px;
+            background-color: #f5f5f5;
+            border: 2px solid #ddd;
+            border-radius: 15px;
+            margin: 20px auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #888;
+            font-size: 14px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+            margin: 30px 0;
+        }
+        
+        @media (min-width: 768px) {
+            .features-grid {
+                grid-template-columns: 1fr 1fr;
+                align-items: start;
+            }
+        }
+    </style>
 </head>
 <body>
-
     <section class="container">
         <h2>Le projet DBS Mata</h2>
-        <p>Pour mon stage de fin de fin d’étude, j’ai eu la chance de travailler sur la démonstration d’une application mobile de surveillance de Biosecurité : 
-            liste des organismes ravageurs, notifications entre utilisateurs, visualisation cartographique de la répartition des nuisibles et surveillance biologique font partie des fonctionnalités de mon outil. 
-            La particularité de cette application est qu’elle a été réalisée entièrement en no code, via l’outil Glide. 
-            D’abord abordé lors de mes cours, ce plate-forme de développement gratuite permet la création d'outil no code en PWA.
-        </p>
+        
+        <div class="features-grid">
+            <div>
+                <h3>1. Projet de stage en biosécurité - Polynésie Française</h3>
+                <p>Projet de fin d'études d'ingénieur agronome réalisé en stage de 6 mois au sein de la Direction de la Biosécurité (DBS) de Polynésie Française. Mission : concevoir et développer deux démonstrateurs d'applications mobiles pour moderniser les outils de surveillance des organismes invasifs, en réponse aux enjeux critiques de protection de la biodiversité insulaire du Pacifique.</p>
+            </div>
+            <div class="phone-mockup">
+                Capture d'écran mobile<br>
+                Accueil DBS Mata
+            </div>
+        </div>
 
-        <h3>Visualisation des espèces nuisibles et de leurs hôtes</h3>
-        <p>Virus, bactéries, insectes ou plantes, le démonstrateur de DBS Mata permet la consultation d'un grand ensemble d'organismes
-            invasives et nuisibles à la biodiversité de Polynésie Française. Selon son rôle, l'utilisateur peut également ajouter des espèces
-            et mettre à jour le statut d'un organisme et sa localisation.
-            Il est également possible de visualiser les hôtes des nuisibles, depuis la vue des organismes 
-        </p>
+        <div class="features-grid">
+            <div>
+                <h3>2. Application 1 : Suivi du statut des organismes nuisibles</h3>
+                <p>Premier démonstrateur dédié à la gestion centralisée des données sur les espèces invasives. Base de données exhaustive des organismes nuisibles de Polynésie : virus, bactéries, insectes ravageurs et plantes envahissantes. Interface permettant de consulter, modifier et actualiser le statut de répartition géographique des espèces, avec fiches détaillées incluant plantes hôtes, documentation photographique et historique des signalements.</p>
+                <p><em>Lien démo : <a href="https://dbsmataondemo.glide.page/dl/a400f7" target="_blank">Application Organismes Nuisibles</a></em></p>
+            </div>
+            <div class="phone-mockup">
+                Capture d'écran mobile<br>
+                Liste des organismes
+            </div>
+        </div>
 
-        <h3>Déclaration d'organismes nuisibles</h3>
-        <p>Tout utilisateur de DBS Mata a la possibilité de déclarer la présence d'un potentiel organisme nuisibles, tout en ajoutant
-            une photo mais surtout la localisation du nuisible dans sa déclaration.  
-        </p>
+        <div class="features-grid">
+            <div>
+                <h3>3. Application 2 : Missions de surveillance biologique</h3>
+                <p>Second démonstrateur centré sur la gestion opérationnelle des missions terrain. Outil de planification et suivi des campagnes de surveillance, avec modules spécialisés pour le piégeage Oryctes rhinoceros, les analyses de symptômes végétaux (HLB des agrumes), et la collecte de données géolocalisées. Interface permettant aux agents de créer des missions, enregistrer leurs observations, et synchroniser les données collectées.</p>
+                <p><em>Lien démo : <a href="https://dbsmatasbdemo.glide.page/" target="_blank">Application Surveillance Biologique</a></em></p>
+            </div>
+            <div class="phone-mockup">
+                Capture d'écran mobile<br>
+                Création de mission
+            </div>
+        </div>
 
-        <h3>Un outil réalisé entièrement sur Glide</h3>
-        <p>La décision d'utiliser glide pour construire mon démonstrateur a été prise afin de réaliser mon travail de stage
-            dans les temps et avec un visuel détaillé et ergonomique. Responsive web et mobile, le rendu possible par Glide est
-            une application mettant en image les fonctionnalités voulues, le tout sans coder une seule ligne de code.
-        Ce démonstrateur a permis d'illustrer le potentiel d'une application capable d'aider les controleurs de la DBS ainsi que les agents
-    responsables de la rédaction de compte rendus.</p>
+        <div class="features-grid">
+            <div>
+                <h3>4. Système de déclaration participative intégré</h3>
+                <p>Fonctionnalité transversale aux deux applications permettant le signalement citoyen d'organismes suspects. Formulaire simplifié avec capture photo obligatoire et géolocalisation automatique, alimentant directement la base de données du statut des organismes et générant des alertes pour les équipes de surveillance terrain.</p>
+            </div>
+            <div class="phone-mockup">
+                Capture d'écran mobile<br>
+                Formulaire déclaration
+            </div>
+        </div>
+
+        <div class="features-grid">
+            <div>
+                <h3>5. Architecture technique no-code innovante</h3>
+                <p>Développement intégral et personnel de deux PWA (Progressive Web Apps) via la plateforme Glide, sans aucune ligne de code traditionnelle. Architecture responsive avec synchronisation cloud temps réel, intégration native GPS et appareil photo. Authentification sécurisée par email/PIN et Google Sign-In, avec gestion des rôles utilisateurs différenciés.</p>
+            </div>
+            <div class="phone-mockup">
+                Capture d'écran mobile<br>
+                Interface Glide
+            </div>
+        </div>
+
+        <div class="features-grid">
+            <div>
+                <h3>6. Approche utilisateur centrée et ergonomie terrain</h3>
+                <p>Interface mobile-first optimisée pour les conditions d'utilisation en extérieur : écrans tactiles larges, navigation intuitive par icônes, formulaires adaptatifs et validation en temps réel. Design respectant la charte graphique officielle de la Direction de la Biosécurité, assurant une cohérence visuelle avec l'identité institutionnelle et facilitant l'adoption par les agents.</p>
+            </div>
+            <div class="phone-mockup">
+                Capture d'écran mobile<br>
+                Navigation terrain
+            </div>
+        </div>
+
+        <div class="features-grid">
+            <div>
+                <h3>7. Impact du stage et perspectives d'implémentation</h3>
+                <p>Ces deux démonstrateurs ont validé la faisabilité d'une digitalisation complète des processus de biosécurité en Polynésie. Présentés aux équipes dirigeantes de la DBS, ils ont démontré le potentiel d'une approche no-code pour réduire drastiquement les délais de développement (6 mois vs 2-3 ans en développement classique) tout en maintenant des fonctionnalités professionnelles. Le projet a ouvert la voie à un développement opérationnel futur, avec recommandations d'intégration aux systèmes d'information existants de la DBS.</p>
+            </div>
+            <div class="phone-mockup">
+                Capture d'écran mobile<br>
+                Résultats projet
+            </div>
+        </div>
+
     </section>
 </body>
 </html>

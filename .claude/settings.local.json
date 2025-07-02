@@ -6,7 +6,10 @@
       "Bash(ls:*)",
       "Bash(unzip:*)",
       "Bash(7z:*)",
-      "Bash(rm:*)"
+      "Bash(rm:*)",
+      "WebFetch(domain:dbsmataondemo.glide.page)",
+      "WebFetch(domain:dbsmatasbdemo.glide.page)",
+      "Bash(python:*)"
     ],
     "deny": []
   }

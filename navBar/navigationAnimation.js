@@ -1,9 +1,16 @@
 
 document.addEventListener("DOMContentLoaded", function() {
-fetch("/navBar/navbar.html")
+    // Charger la navbar
+    fetch("/navBar/navbar.html")
         .then(response => response.text())
         .then(data => document.getElementById("navBar").innerHTML = data)
         .catch(error => console.error("Erreur de chargement de la navbar :", error));
+    
+    // Rendre le contenu principal visible au chargement
+    const selectedPage = document.getElementById("selectedPage");
+    if (selectedPage) {
+        selectedPage.classList.add("visible");
+    }
 });
     
 
