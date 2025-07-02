@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Mon parcours - Bérénice Rosenberg : ingénieure agronome passionnée de technologies numériques">
+    <title>Mon Parcours - Bérénice Rosenberg</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="stylesheet" href="/styles.css">
+    <style>
+        /* Styles spécifiques pour la page parcours */
+        .section-parcours {
+            margin: 40px 0;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            background: white;
+            position: relative;
+        }
+
+        .section-parcours h3 {
+            color: #667eea;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.5rem;
+        }
+
+        .experience-item, .formation-item {
+            margin: 20px 0;
+            padding: 15px;
+            border-left: 4px solid #667eea;
+            background: #f8f9ff;
+            border-radius: 8px;
+        }
+
+        .experience-item h4, .formation-item h4 {
+            color: #4a5568;
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+        }
+
+        .date {
+            color: #667eea;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .lieu {
+            color: #666;
+            font-style: italic;
+            margin-bottom: 10px;
+        }
+
+        /* Carrés anecdotes avec hover */
+        .anecdotes-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin: 40px 0;
+        }
+
+        .anecdote-card {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            padding: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+            min-height: 300px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            border-left: 5px solid #667eea;
+            overflow: hidden;
+        }
+
+        .anecdote-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+        }
+
+        .anecdote-card h4 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+            transition: all 0.3s ease;
+        }
+
+        .anecdote-card p {
+            font-size: 0.9rem;
+            line-height: 1.4;
+            color: #666;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: all 0.3s ease;
+        }
+
+        .anecdote-card:hover p {
+            opacity: 1;
+            transform: translateY(0);
+            font-size: 1rem;
+        }
+
+        .anecdote-card:hover h4 {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+        }
+
+        .anecdote-triops {
+            border-left-color: #667eea;
+        }
+
+        .anecdote-plongee {
+            border-left-color: #4facfe;
+        }
+
+        .anecdote-course {
+            border-left-color: #43e97b;
+        }
+
+        .anecdote-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+        }
+
+        .anecdote-image {
+            width: 100%;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-top: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .anecdote-card:hover .anecdote-image {
+            transform: scale(1.05);
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .skill-category {
+            background: #f8f9ff;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
+        }
+
+        .skill-category h4 {
+            color: #4a5568;
+            margin-bottom: 15px;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .skill-tag {
+            background: #667eea;
+            color: white;
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .section-parcours {
+                padding: 20px;
+            }
+            
+            .anecdotes-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="container">
+        <!-- Intro -->
+        <div class="section-parcours">
+            <h2>👋 Hello ! Moi c'est Bérénice</h2>
+            <p>Ingénieure agronome de formation avec une petite obsession pour les technologies numériques ! Après quelques détours par le développement logiciel et l'enseignement, je navigue entre deux passions : l'agronomie et la tech. Quand je ne code pas d'applications mobiles, vous me trouverez sûrement en train d'observer mes petites bêtes ou à transpirer en course à pied !</p>
+        </div>
+
+        <!-- Formation -->
+        <div class="section-parcours">
+            <h3>🎓 Mon Parcours Scolaire</h3>
+            <div class="formation-item">
+                <h4>Ingénieure agronome - Spécialité AGROTIC</h4>
+                <div class="date">2019-2023</div>
+                <div class="lieu">Bordeaux Sciences Agro - Institut Agro Montpellier</div>
+                <p>Là où j'ai découvert que l'agriculture et la tech peuvent faire des merveilles ensemble ! Spécialisation en agronomie numérique qui m'a ouvert les yeux sur les possibilités infinies des données agricoles.</p>
+            </div>
+            <div class="formation-item">
+                <h4>3ème année de licence de biologie cellulaire et physiologie</h4>
+                <div class="date">2018-2019</div>
+                <div class="lieu">Université de Dijon</div>
+                <p>Une année qui m'a fait comprendre que j'avais besoin de plus concret que la théorie pure, mais qui m'a donné des bases solides en biologie.</p>
+            </div>
+            <div class="formation-item">
+                <h4>Classe préparatoire BCPST</h4>
+                <div class="date">2016-2018</div>
+                <div class="lieu">Lycée Georges de la Tour - Metz</div>
+                <p>Deux années intenses où j'ai développé ma rigueur scientifique et découvert ma passion pour les sciences du vivant.</p>
+            </div>
+        </div>
+
+        <!-- Expériences -->
+        <div class="section-parcours">
+            <h3>💼 Mon Parcours Pro (Un Peu Atypique !)</h3>
+            <div class="experience-item">
+                <h4>Développeuse FullStack</h4>
+                <div class="date">Mars 2024</div>
+                <div class="lieu">Innovotive Digital Technologies, Papeete</div>
+                <p>Plongée dans l'univers .NET avec C# et WPF, plus développement web en TypeScript. Une expérience enrichissante qui m'a confirmé mon goût pour le développement technique.</p>
+            </div>
+            <div class="experience-item">
+                <h4>Professeure de mathématiques</h4>
+                <div class="date">Novembre 2023 - Février 2024</div>
+                <div class="lieu">Collège de Nui Uta</div>
+                <p>6ème et 5ème, une expérience humaine incroyable ! Transmettre la logique mathématique à des ados, ça forge le caractère et ça développe la pédagogie.</p>
+            </div>
+            <div class="experience-item">
+                <h4>Stagiaire ingénieure gestion de projet</h4>
+                <div class="date">Avril - Septembre 2023</div>
+                <div class="lieu">Direction de la biosécurité de Polynésie française, Papeete</div>
+                <p>Le projet qui a tout changé ! Développement d'une application mobile de surveillance biologique phytosanitaire + analyse de risque du dragon jaune sur agrumes. Découverte du no-code avec Glide et de la biosécurité.</p>
+            </div>
+            <div class="experience-item">
+                <h4>Stagiaire ingénieure</h4>
+                <div class="date">Mai - Juillet 2022</div>
+                <div class="lieu">Fenua Environnement, Papeete</div>
+                <p>Conception et pose d'hôtels à insectes sur Tahiti + étude statistique de l'impact de l'anthropisation sur les pollinisateurs. Premier contact professionnel avec mes chères petites bêtes !</p>
+            </div>
+            <div class="experience-item">
+                <h4>Stagiaire ingénieure de recherche</h4>
+                <div class="date">Octobre 2021 - Avril 2022</div>
+                <div class="lieu">INRAE CBCP - Montferrier-sur-Lez</div>
+                <p>Développement d'algorithmes de prise de photos automatique en Python + gestion d'élevage de drosophiles. Première vraie expérience de recherche et découverte de ma passion pour l'entomologie.</p>
+            </div>
+            <div class="experience-item">
+                <h4>Stagiaire ingénieure</h4>
+                <div class="date">Été 2021</div>
+                <div class="lieu">INRAE d'Avignon</div>
+                <p>Amélioration d'algorithmes d'assignation automatique de l'occupation du sol en R + inventaires naturalistes. Découverte du terrain agricole et des SIG.</p>
+            </div>
+        </div>
+
+        <!-- Compétences -->
+        <div class="section-parcours">
+            <h3>🛠️ Ma Boîte à Outils Tech</h3>
+            <p>En constante évolution selon les projets et les découvertes !</p>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h4>Programmation</h4>
+                    <div class="skill-tags">
+                        <span class="skill-tag">C#</span>
+                        <span class="skill-tag">TypeScript</span>
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">R</span>
+                        <span class="skill-tag">Dart</span>
+                        <span class="skill-tag">PHP</span>
+                        <span class="skill-tag">HTML/CSS</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h4>Frameworks & Tech</h4>
+                    <div class="skill-tags">
+                        <span class="skill-tag">WPF</span>
+                        <span class="skill-tag">Angular</span>
+                        <span class="skill-tag">Arduino</span>
+                        <span class="skill-tag">Glide</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h4>Data & Design</h4>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Power BI</span>
+                        <span class="skill-tag">R Studio</span>
+                        <span class="skill-tag">QGIS</span>
+                        <span class="skill-tag">Figma</span>
+                        <span class="skill-tag">Canva</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h4>Spécialités</h4>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Apps mobiles</span>
+                        <span class="skill-tag">Agronomie numérique</span>
+                        <span class="skill-tag">Biosécurité</span>
+                        <span class="skill-tag">Entomologie</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Anecdotes -->
+        <div class="section-parcours">
+            <h3>🎭 Quelques Anecdotes Sur Moi</h3>
+            <div class="anecdotes-container">
+                <div class="anecdote-card anecdote-triops">
+                    <div class="anecdote-content">
+                        <h4>🦐 Mon amour pour les Triops</h4>
+                        <p>Mon animal préféré ? Le Triops ! Ces petits crustacés préhistoriques me fascinent tellement que j'ai créé un compte Instagram entier : "Les triops de Bérénice". Mes amis pensent que je suis un peu folle !</p>
+                    </div>
+                    <img src="/photos/triops.jpeg" alt="Mes triops adorés" class="anecdote-image">
+                </div>
+                <div class="anecdote-card anecdote-plongee">
+                    <div class="anecdote-content">
+                        <h4>🤿 Ma première plongée... mémorable</h4>
+                        <p>Pendant mon initiation niveau 1 en Polynésie, j'ai réussi l'exploit de boire la tasse à 6 mètres de profondeur ! Pas très gracieux, mais ça m'a appris l'humilité sous l'eau.</p>
+                    </div>
+                    <img src="/photos/plongee.jpeg" alt="Plongée en Polynésie" class="anecdote-image">
+                </div>
+                <div class="anecdote-card anecdote-course">
+                    <div class="anecdote-content">
+                        <h4>🏃‍♀️ Mon défi course à pied</h4>
+                        <p>Je me suis lancé le défi de me mettre à la course et d'augmenter ma distance sans m'arrêter. Au début 500m me tuaient... maintenant je rêve de mon premier 10K !</p>
+                    </div>
+                    <img src="/photos/berenice_cap.jpeg" alt="Course à pied" class="anecdote-image">
+                </div>
+            </div>
+        </div>
+
+        <!-- Aujourd'hui -->
+        <div class="section-parcours">
+            <h3>🚀 Aujourd'hui & Demain</h3>
+            <p>Après ce parcours riche en expériences variées, j'ai une certitude : je veux revenir à mes premières amours, l'agronomie, mais en y apportant toute l'expertise tech que j'ai acquise. Mon objectif ? Contribuer à une agriculture plus durable et intelligente grâce au numérique.</p>
+            <p>Que ce soit via des applications de terrain, de l'analyse de données agricoles ou des solutions IoT, je veux mettre la technologie au service des enjeux environnementaux ! 🌱💻</p>
+        </div>
+    </section>
+</body>
+</html>

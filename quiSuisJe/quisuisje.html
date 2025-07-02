@@ -6,10 +6,41 @@
     <meta name="description" content="Bérénice - Développeuse freelance spécialisée en développement web et mobile, applications PWA et outils no-code">
     <link rel="icon" type="image/png" href="/favicon.png">
     <link rel="stylesheet" href="/styles.css">
+    <style>
+        .profile-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .profile-photo {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+            margin: 20px auto;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+        
+        .profile-photo:hover {
+            transform: scale(1.05);
+        }
+        
+        @media (max-width: 768px) {
+            .profile-photo {
+                width: 150px;
+                height: 150px;
+            }
+        }
+    </style>
 </head>
 <body>
     <section class="container">
-        <h2>Qui suis-je ?</h2>
+        <div class="profile-header">
+            <h2>Qui suis-je ?</h2>
+            <img src="/photos/berenice.jpeg" alt="Bérénice Rosenberg" class="profile-photo">
+        </div>
         <div class="profile-content">
             <div class="profile-text">
                 <p><strong>Moi c'est Bérénice</strong>, ingénieure en agriculture et informatique diplômée de Bordeaux Sciences Agro depuis 2023.</p>
