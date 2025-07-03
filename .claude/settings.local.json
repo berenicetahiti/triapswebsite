@@ -9,7 +9,8 @@
       "Bash(rm:*)",
       "WebFetch(domain:dbsmataondemo.glide.page)",
       "WebFetch(domain:dbsmatasbdemo.glide.page)",
-      "Bash(python:*)"
+      "Bash(python:*)",
+      "Bash(rg:*)"
     ],
     "deny": []
   }
