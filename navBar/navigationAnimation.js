@@ -1,106 +1,138 @@
+// Navigation système pour Triapps
+// Gestion centralisée de la navigation et du chargement de contenu
 
-document.addEventListener("DOMContentLoaded", function() {
-    // Charger la navbar
-    fetch("navBar/navBar.html")
-        .then(response => response.text())
-        .then(data => document.getElementById("navBar").innerHTML = data)
-        .catch(error => console.error("Erreur de chargement de la navbar :", error));
-    
-    // Rendre le contenu principal visible au chargement
-    const selectedPage = document.getElementById("selectedPage");
-    if (selectedPage) {
-        selectedPage.classList.add("visible");
-    }
-});
-    
-
-//evenement réalisé au clic de la barre de navigation : affichage du content en dessous
-
-document.addEventListener("DOMContentLoaded", function () {
-    let barreNavigation = document.getElementById("navBar");
-
-    if (!barreNavigation) {
-        return;
+class TriappsNavigation {
+    constructor() {
+        this.ANIMATION_DURATION = 500;
+        this.FADE_DELAY = 30;
+        this.init();
     }
 
-    // Gestion du clic sur les liens de navigation dans la barre de navigation uniquement
-    barreNavigation.addEventListener("click", function (event) {
-        console.log("Clic dans la barre de navigation", event.target);
+    init() {
+        this.loadNavbar();
+        this.setupEventListeners();
+        this.showInitialContent();
+    }
+
+    // Chargement de la navbar
+    async loadNavbar() {
+        try {
+            const response = await fetch("navBar/navBar.html");
+            if (!response.ok) throw new Error(`HTTP ${response.status}`);
+            
+            const html = await response.text();
+            const navBarElement = document.getElementById("navBar");
+            
+            if (navBarElement) {
+                navBarElement.innerHTML = html;
+            }
+        } catch (error) {
+            console.error("Erreur de chargement de la navbar:", error);
+            this.showError("Erreur de chargement de la navigation");
+        }
+    }
+
+    // Configuration des écouteurs d'événements
+    setupEventListeners() {
+        // Navigation principale
+        document.addEventListener("click", (event) => {
+            const navLink = event.target.closest("#navBar a[data-link]");
+            if (navLink) {
+                event.preventDefault();
+                this.navigateToPage(navLink.getAttribute("data-link"), "selectedPage");
+            }
+        });
+
+        // Navigation des projets (images gallery)
+        document.addEventListener("click", (event) => {
+            if (event.target.tagName === "IMG" && event.target.classList.contains("gallery-image")) {
+                const pageUrl = event.target.getAttribute("data-link");
+                if (pageUrl) {
+                    this.navigateToPage(pageUrl, "content-container");
+                }
+            }
+        });
+    }
+
+    // Afficher le contenu initial
+    showInitialContent() {
+        const selectedPage = document.getElementById("selectedPage");
+        if (selectedPage) {
+            selectedPage.classList.add("visible");
+        }
+    }
+
+    // Navigation vers une page avec gestion d'erreurs
+    async navigateToPage(pageUrl, containerId) {
+        const container = document.getElementById(containerId);
         
-        let link = event.target.closest("a[data-link]"); // Vérifie si c'est un <a> avec data-link
-        if (!link) return; // Si ce n'est pas un lien valide, on ignore
-
-        event.preventDefault(); // Empêche le chargement de la page
-
-        let pageUrl = link.getAttribute("data-link");
-        let mainContainer = document.getElementById("selectedPage");
-
-        if (!mainContainer) {
-            console.error("Div #selectedPage introuvable !");
+        if (!container) {
+            console.error(`Container #${containerId} introuvable!`);
             return;
         }
 
-        // // Masquer le contenu avec animation
-        mainContainer.classList.remove("visible");
-        mainContainer.classList.add("hidden");
-
-        // Attend 500ms avant de charger le nouveau contenu (temps de l'animation CSS)
-        setTimeout(() => {
-            fetch(pageUrl)
-                .then(response => response.text())
-                .then(html => {
-                    mainContainer.innerHTML = html; // Insère le nouveau contenu
-                    
-                    // Attendre un petit moment avant de réafficher
-                    setTimeout(() => {
-                        mainContainer.classList.remove("hidden");
-                        mainContainer.classList.add("visible");
-                        mainContainer.scrollIntoView({ behavior: "smooth" }); // Scroll fluide
-                    }, 30);
-                })
-                .catch(error => {
-                    console.error("Erreur lors du chargement de la page :", error);
-                });
-        }, 500); // Temps de disparition (0.5s)
-    });
-});    
-
-//evenement au moment du click de l'image : insère la page associée à l'image en dessous 
-document.addEventListener("DOMContentLoaded", function () {
-    document.body.addEventListener("click", function (event) {
-         // Vérifie quel élément est cliqué
-        if (event.target.tagName === "IMG" && event.target.classList.contains("gallery-image")) {
-            console.log("Clic détecté sur l'image gallerie:", event.target);
-            let pageUrl = event.target.getAttribute("data-link");
-            let contentContainer = document.getElementById("content-container");
-
-            if (!contentContainer) {
-                console.error("Div #content-container introuvable !");
-                return;
-            };
-
-            // Ajoute la classe "hidden" pour masquer le contenu avant de recharger
-            contentContainer.classList.remove("visible");
-            contentContainer.classList.add("hidden");
-
-            // Attend 500ms avant de charger le nouveau contenu (temps de l'animation CSS)
-            setTimeout(() => {
-                fetch(pageUrl)
-                    .then(response => response.text())
-                    .then(html => {
-                        contentContainer.innerHTML = html; // Insère le nouveau contenu
-                        
-                        // Attendre un petit moment avant de réafficher
-                        setTimeout(() => {
-                            contentContainer.classList.remove("hidden");
-                            contentContainer.classList.add("visible");
-                            contentContainer.scrollIntoView({ behavior: "smooth" }); // Scroll fluide
-                        }, 50);
-                    })
-                    .catch(error => {
-                        console.error("Erreur lors du chargement de la page :", error);
-                    });
-            }, 500); // Temps de disparition (0.5s)
+        try {
+            // Animation de sortie
+            await this.fadeOut(container);
+            
+            // Chargement du contenu
+            const response = await fetch(pageUrl);
+            if (!response.ok) throw new Error(`HTTP ${response.status}`);
+            
+            const html = await response.text();
+            container.innerHTML = html;
+            
+            // Animation d'entrée
+            await this.fadeIn(container);
+            
+            // Scroll fluide vers le contenu
+            container.scrollIntoView({ behavior: "smooth" });
+            
+        } catch (error) {
+            console.error("Erreur lors du chargement de la page:", error);
+            this.showError("Erreur de chargement de la page", container);
         }
-    });
+    }
+
+    // Animation de disparition
+    fadeOut(element) {
+        return new Promise(resolve => {
+            element.classList.remove("visible");
+            element.classList.add("hidden");
+            setTimeout(resolve, this.ANIMATION_DURATION);
+        });
+    }
+
+    // Animation d'apparition
+    fadeIn(element) {
+        return new Promise(resolve => {
+            setTimeout(() => {
+                element.classList.remove("hidden");
+                element.classList.add("visible");
+                resolve();
+            }, this.FADE_DELAY);
+        });
+    }
+
+    // Affichage d'erreur utilisateur
+    showError(message, container = null) {
+        const errorHtml = `
+            <div class="error-message">
+                <h3>Oops!</h3>
+                <p>${message}</p>
+                <button onclick="location.reload()">Rafraîchir la page</button>
+            </div>
+        `;
+        
+        if (container) {
+            container.innerHTML = errorHtml;
+            container.classList.remove("hidden");
+            container.classList.add("visible");
+        }
+    }
+}
+
+// Initialisation au chargement de la page
+document.addEventListener("DOMContentLoaded", () => {
+    new TriappsNavigation();
 });
