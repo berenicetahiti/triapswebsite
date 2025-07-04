@@ -3,7 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../styles.css">
+    <meta name="description" content="Projet DBS Mata - Développement d'applications mobiles pour la biosécurité en Polynésie Française">
+    <link rel="icon" type="image/png" href="../favicon.png">
+    <link rel="stylesheet" href="../css/critical.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/pages.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <title>Projet DBS Mata - Triapps</title>
     <style>
         .phone-mockup {
             width: 200px;
@@ -37,8 +43,14 @@
     </style>
 </head>
 <body>
-    <section class="container">
-        <h2>Le projet DBS Mata</h2>
+
+    <header class="header-page">
+        <h1>Projet DBS Mata</h1>
+        <p>Applications mobiles pour la biosécurité en Polynésie Française</p>
+    </header>
+
+    <div id="main-content" role="main">
+        <section class="container">
         
         <div class="features-grid">
             <div>
@@ -55,7 +67,7 @@
             <div>
                 <h3>2. Application 1 : Suivi du statut des organismes nuisibles</h3>
                 <p>Premier démonstrateur dédié à la gestion centralisée des données sur les espèces invasives. Base de données exhaustive des organismes nuisibles de Polynésie : virus, bactéries, insectes ravageurs et plantes envahissantes. Interface permettant de consulter, modifier et actualiser le statut de répartition géographique des espèces, avec fiches détaillées incluant plantes hôtes, documentation photographique et historique des signalements.</p>
-                <p><em>Lien démo : <a href="https://dbsmataondemo.glide.page/dl/a400f7" target="_blank">Application Organismes Nuisibles</a></em></p>
+                <p><em>Lien démo : <a href="https://dbsmataondemo.glide.page/dl/a400f7" target="_blank" rel="noopener noreferrer" aria-label="Démonstration de l'application Organismes Nuisibles">Application Organismes Nuisibles</a></em></p>
             </div>
             <div class="phone-mockup">
                 Capture d'écran mobile<br>
@@ -67,7 +79,7 @@
             <div>
                 <h3>3. Application 2 : Missions de surveillance biologique</h3>
                 <p>Second démonstrateur centré sur la gestion opérationnelle des missions terrain. Outil de planification et suivi des campagnes de surveillance, avec modules spécialisés pour le piégeage Oryctes rhinoceros, les analyses de symptômes végétaux (HLB des agrumes), et la collecte de données géolocalisées. Interface permettant aux agents de créer des missions, enregistrer leurs observations, et synchroniser les données collectées.</p>
-                <p><em>Lien démo : <a href="https://dbsmatasbdemo.glide.page/" target="_blank">Application Surveillance Biologique</a></em></p>
+                <p><em>Lien démo : <a href="https://dbsmatasbdemo.glide.page/" target="_blank" rel="noopener noreferrer" aria-label="Démonstration de l'application Surveillance Biologique">Application Surveillance Biologique</a></em></p>
             </div>
             <div class="phone-mockup">
                 Capture d'écran mobile<br>
@@ -119,6 +131,10 @@
             </div>
         </div>
 
-    </section>
+        </section>
+    </div>
+
+    <script src="../js/loading.js"></script>
+    <script src="../js/navigation.js"></script>
 </body>
 </html>

@@ -14,10 +14,13 @@ class TriappsNavigation {
         this.showInitialContent();
     }
 
-    // Chargement de la navbar
+    // Chargement de la navbar avec loading
     async loadNavbar() {
         try {
-            const response = await fetch("navBar/navBar.html");
+            // Afficher loading toast
+            const toast = window.LoadingManager?.showToastLoading("Chargement navigation...");
+            
+            const response = await fetch("components/navbar.html");
             if (!response.ok) throw new Error(`HTTP ${response.status}`);
             
             const html = await response.text();
@@ -26,9 +29,17 @@ class TriappsNavigation {
             if (navBarElement) {
                 navBarElement.innerHTML = html;
             }
+            
+            // Masquer loading toast
+            if (window.LoadingManager) {
+                window.LoadingManager.hideToastLoading();
+            }
         } catch (error) {
             console.error("Erreur de chargement de la navbar:", error);
             this.showError("Erreur de chargement de la navigation");
+            if (window.LoadingManager) {
+                window.LoadingManager.hideToastLoading();
+            }
         }
     }
 
@@ -62,7 +73,7 @@ class TriappsNavigation {
         }
     }
 
-    // Navigation vers une page avec gestion d'erreurs
+    // Navigation vers une page avec gestion d'erreurs et loading
     async navigateToPage(pageUrl, containerId) {
         const container = document.getElementById(containerId);
         
@@ -75,12 +86,22 @@ class TriappsNavigation {
             // Animation de sortie
             await this.fadeOut(container);
             
+            // Afficher loading pendant le fetch
+            if (window.LoadingManager) {
+                window.LoadingManager.showLoading(containerId, "Chargement de la page...");
+            }
+            
             // Chargement du contenu
             const response = await fetch(pageUrl);
             if (!response.ok) throw new Error(`HTTP ${response.status}`);
             
             const html = await response.text();
             container.innerHTML = html;
+            
+            // Activer lazy loading pour les nouvelles images
+            if (window.LoadingManager) {
+                window.LoadingManager.enableLazyLoading();
+            }
             
             // Animation d'entrée
             await this.fadeIn(container);

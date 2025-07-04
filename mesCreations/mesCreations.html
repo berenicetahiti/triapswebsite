@@ -5,42 +5,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Mes créations - Portfolio de Bérénice : découvrez mes projets web et mobiles, applications PWA et solutions innovantes.">
     <link rel="icon" type="image/png" href="../favicon.png">
-    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../css/critical.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/pages.css">
+    <link rel="stylesheet" href="../css/responsive.css">
     <link rel="stylesheet" href="creations.css">
+    <title>Mes créations - Triapps</title>
 </head>
 <body>
-    <section class="container">
-        <h2>Mes créations</h2>
-        <p>Découvrez mes projets et réalisations en développement web et mobile.</p>
 
-        <div class="gallery">
-            <div class="gallery-item">
-                <img src="mesCreations/diapo_creations/agrotic.png" alt="Projet Agrotic - Application agricole" class="gallery-image" data-link="mesCreations/projetAgrotic.html">
-                <div class="gallery-overlay">
-                    <h3>Projet Agrotic</h3>
-                    <p>Application agricole innovante</p>
+    <header class="header-page">
+        <h1>Mes créations</h1>
+        <p>Découvrez mes projets et réalisations en développement web et mobile</p>
+    </header>
+
+    <div id="main-content" role="main">
+        <section class="container">
+            <div class="gallery" role="region" aria-label="Galerie de projets">
+                <div class="gallery-item">
+                    <img src="../images/projects/agrotic.png" alt="Projet Agrotic - Application agricole" class="gallery-image" data-link="mesCreations/projetAgrotic.html">
+                    <div class="gallery-overlay">
+                        <h3>Projet Agrotic</h3>
+                        <p>Application agricole innovante</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="../images/projects/dbs_mata.png" alt="Projet DBS Mata - Base de données" class="gallery-image" data-link="mesCreations/projetDbsMata.html">
+                    <div class="gallery-overlay">
+                        <h3>DBS Mata</h3>
+                        <p>Système de base de données</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="../images/projects/GLIDE.png" alt="Projet Glide - Application PWA" class="gallery-image" data-link="mesCreations/projetGlide.html">
+                    <div class="gallery-overlay">
+                        <h3>Application Glide</h3>
+                        <p>PWA développée avec Glide</p>
+                    </div>
                 </div>
             </div>
-            
-            <div class="gallery-item">
-                <img src="mesCreations/diapo_creations/dbs_mata.png" alt="Projet DBS Mata - Base de données" class="gallery-image" data-link="mesCreations/projetDbsMata.html">
-                <div class="gallery-overlay">
-                    <h3>DBS Mata</h3>
-                    <p>Système de base de données</p>
-                </div>
-            </div>
-            
-            <div class="gallery-item">
-                <img src="mesCreations/diapo_creations/GLIDE.png" alt="Projet Glide - Application PWA" class="gallery-image" data-link="mesCreations/projetGlide.html">
-                <div class="gallery-overlay">
-                    <h3>Application Glide</h3>
-                    <p>PWA développée avec Glide</p>
-                </div>
-            </div>
-        </div>
-    </section>
+        </section>
+    </div>
     
     <div id="content-container"></div>
-    <script src="../navBar/navigationAnimation.js"></script>
+    <script src="../js/loading.js"></script>
+    <script src="../js/navigation.js"></script>
 </body>
 </html>

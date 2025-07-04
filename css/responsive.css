@@ -1,0 +1,615 @@
+/* Media queries et styles responsifs pour Triapps */
+
+/* Tablettes et petits écrans */
+@media (max-width: 768px) {
+  /* Navigation mobile */
+  nav {
+    flex-direction: column;
+    align-items: center;
+    padding: 8px;
+  }
+
+  nav a {
+    margin: 5px 0;
+    padding: 10px 15px;
+    width: 100%;
+    text-align: center;
+  }
+
+  /* Header mobile */
+  header {
+    padding: 30px 15px;
+  }
+
+  header h1 {
+    font-size: 1.8rem;
+  }
+
+  header p {
+    font-size: 1rem;
+  }
+
+  /* Container mobile */
+  .container {
+    padding: 15px;
+  }
+
+  /* Galerie mobile */
+  .gallery {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .gallery-item {
+    margin-bottom: 15px;
+  }
+
+  /* Services mobile */
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .service-card {
+    padding: 20px;
+  }
+
+  .service-icon {
+    font-size: 2.5rem;
+  }
+
+  /* Processus mobile */
+  .process-steps {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .step {
+    padding: 15px;
+  }
+
+  .step-number {
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+  }
+
+  /* Boutons mobile */
+  .cta-buttons {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .btn-primary, .btn-secondary {
+    padding: 12px 25px;
+    font-size: 0.9rem;
+  }
+
+  /* Liens sociaux mobile */
+  .social-links {
+    gap: 15px;
+  }
+
+  .social-link {
+    padding: 10px 16px;
+    font-size: 0.9rem;
+  }
+
+  /* Projets mobile */
+  .project-card {
+    padding: 20px;
+  }
+
+  .project-icon {
+    font-size: 2.5rem;
+  }
+
+  /* Phases mobile */
+  .phases-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .phase-card {
+    padding: 20px;
+  }
+
+  .phase-number {
+    width: 35px;
+    height: 35px;
+    font-size: 0.9rem;
+  }
+
+  /* Rôles mobile */
+  .roles-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .role-card {
+    padding: 20px;
+  }
+
+  .role-icon {
+    font-size: 2rem;
+  }
+
+  /* Technologies mobile */
+  .tech-list {
+    gap: 10px;
+  }
+
+  .tech-badge {
+    padding: 6px 12px;
+    font-size: 0.8rem;
+  }
+
+  /* Défis mobile */
+  .challenge-item {
+    padding: 15px;
+  }
+
+  /* Résultats mobile */
+  .results-content {
+    padding: 20px;
+  }
+
+  /* Compétences mobile */
+  .skills-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+  }
+
+  .skill-item {
+    padding: 15px;
+  }
+
+  .skill-icon {
+    font-size: 1.5rem;
+  }
+
+  /* CTA mobile */
+  .project-cta,
+  .cta-section,
+  .contact-section {
+    padding: 25px 20px;
+  }
+
+  /* Profil mobile */
+  .profile-content {
+    padding: 0 10px;
+  }
+
+  .profile-text p {
+    font-size: 1rem;
+  }
+}
+
+/* Très petits écrans (smartphones) */
+@media (max-width: 480px) {
+  /* Body mobile */
+  body {
+    padding-top: 120px; /* Navigation plus haute sur mobile */
+  }
+
+  /* Navigation très petite */
+  nav {
+    position: fixed;
+    flex-wrap: wrap;
+    padding: 5px;
+  }
+
+  nav a {
+    font-size: 0.8rem;
+    padding: 8px 10px;
+    margin: 2px;
+  }
+
+  /* Header très petit */
+  header {
+    padding: 20px 10px;
+  }
+
+  header h1 {
+    font-size: 1.5rem;
+  }
+
+  header p {
+    font-size: 0.9rem;
+  }
+
+  /* Container très petit */
+  .container {
+    padding: 10px;
+  }
+
+  /* Galerie très petite */
+  .gallery {
+    gap: 15px;
+  }
+
+  /* Services très petits */
+  .service-card {
+    padding: 15px;
+  }
+
+  .service-icon {
+    font-size: 2rem;
+  }
+
+  /* Étapes très petites */
+  .step {
+    padding: 10px;
+  }
+
+  .step-number {
+    width: 35px;
+    height: 35px;
+    font-size: 0.9rem;
+  }
+
+  /* Boutons très petits */
+  .btn-primary, .btn-secondary {
+    padding: 10px 20px;
+    font-size: 0.8rem;
+  }
+
+  /* Liens sociaux très petits */
+  .social-link {
+    padding: 8px 12px;
+    font-size: 0.8rem;
+  }
+
+  /* Projets très petits */
+  .project-card {
+    padding: 15px;
+  }
+
+  .project-icon {
+    font-size: 2rem;
+  }
+
+  /* Phases très petites */
+  .phase-card {
+    padding: 15px;
+  }
+
+  .phase-number {
+    width: 30px;
+    height: 30px;
+    font-size: 0.8rem;
+  }
+
+  /* Rôles très petits */
+  .role-card {
+    padding: 15px;
+  }
+
+  .role-icon {
+    font-size: 1.8rem;
+  }
+
+  /* Technologies très petites */
+  .tech-badge {
+    padding: 4px 8px;
+    font-size: 0.7rem;
+  }
+
+  /* Défis très petits */
+  .challenge-item {
+    padding: 12px;
+  }
+
+  /* Résultats très petits */
+  .results-content {
+    padding: 15px;
+  }
+
+  /* Compétences très petites */
+  .skills-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .skill-item {
+    padding: 12px;
+  }
+
+  .skill-icon {
+    font-size: 1.3rem;
+  }
+
+  /* CTA très petits */
+  .project-cta,
+  .cta-section,
+  .contact-section {
+    padding: 20px 15px;
+  }
+
+  /* Profil très petit */
+  .profile-text p {
+    font-size: 0.9rem;
+  }
+}
+
+/* Grands écrans (desktops) */
+@media (min-width: 1200px) {
+  /* Container large */
+  .container {
+    max-width: 1200px;
+    padding: 40px;
+  }
+
+  /* Header large */
+  header h1 {
+    font-size: 3rem;
+  }
+
+  header p {
+    font-size: 1.4rem;
+  }
+
+  /* Galerie large */
+  .gallery {
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 40px;
+  }
+
+  /* Services large */
+  .services-grid {
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 40px;
+  }
+
+  .service-card {
+    padding: 40px;
+  }
+
+  .service-icon {
+    font-size: 3.5rem;
+  }
+
+  /* Processus large */
+  .process-steps {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+  }
+
+  .step {
+    padding: 30px;
+  }
+
+  .step-number {
+    width: 60px;
+    height: 60px;
+    font-size: 1.4rem;
+  }
+
+  /* Projets large */
+  .project-card {
+    padding: 40px;
+  }
+
+  .project-icon {
+    font-size: 3.5rem;
+  }
+
+  /* Phases large */
+  .phases-grid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 35px;
+  }
+
+  .phase-card {
+    padding: 30px;
+  }
+
+  .phase-number {
+    width: 50px;
+    height: 50px;
+    font-size: 1.1rem;
+  }
+
+  /* Rôles large */
+  .roles-grid {
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 40px;
+  }
+
+  .role-card {
+    padding: 30px;
+  }
+
+  .role-icon {
+    font-size: 3rem;
+  }
+
+  /* Compétences large */
+  .skills-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+  }
+
+  .skill-item {
+    padding: 25px;
+  }
+
+  .skill-icon {
+    font-size: 2.5rem;
+  }
+}
+
+/* Très grands écrans (4K+) */
+@media (min-width: 1600px) {
+  /* Container très large */
+  .container {
+    max-width: 1400px;
+    padding: 50px;
+  }
+
+  /* Header très large */
+  header {
+    padding: 80px 20px;
+  }
+
+  header h1 {
+    font-size: 3.5rem;
+  }
+
+  header p {
+    font-size: 1.6rem;
+  }
+
+  /* Galerie très large */
+  .gallery {
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 50px;
+  }
+
+  /* Services très large */
+  .services-grid {
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 50px;
+  }
+
+  .service-card {
+    padding: 50px;
+  }
+
+  /* Processus très large */
+  .process-steps {
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 50px;
+  }
+
+  .step {
+    padding: 40px;
+  }
+
+  /* Projets très large */
+  .project-card {
+    padding: 50px;
+  }
+
+  /* Phases très large */
+  .phases-grid {
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 40px;
+  }
+
+  .phase-card {
+    padding: 35px;
+  }
+
+  /* Rôles très large */
+  .roles-grid {
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 50px;
+  }
+
+  .role-card {
+    padding: 35px;
+  }
+
+  /* Compétences très large */
+  .skills-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 35px;
+  }
+
+  .skill-item {
+    padding: 30px;
+  }
+}
+
+/* Préférences utilisateur */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Mode sombre (si activé par l'utilisateur) */
+@media (prefers-color-scheme: dark) {
+  /* Variables pour le mode sombre */
+  :root {
+    --bg-color: #1a1a1a;
+    --text-color: #e0e0e0;
+    --card-bg: #2d2d2d;
+    --border-color: #404040;
+  }
+
+  /* Styles sombres de base */
+  body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+  }
+
+  /* Cartes sombres */
+  .service-card,
+  .project-card,
+  .phase-card,
+  .role-card,
+  .skill-item,
+  .challenge-item,
+  .results-content {
+    background: var(--card-bg);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+  }
+
+  /* Liens sombres */
+  .social-link {
+    background: var(--card-bg);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+  }
+
+  /* Boutons sombres */
+  .btn-secondary {
+    background: var(--card-bg);
+    color: var(--text-color);
+    border: 2px solid #667eea;
+  }
+}
+
+/* Impression */
+@media print {
+  /* Masquer la navigation */
+  nav {
+    display: none;
+  }
+
+  /* Ajuster le body */
+  body {
+    padding-top: 0;
+    background: white;
+    color: black;
+  }
+
+  /* Masquer les éléments interactifs */
+  .cta-section,
+  .social-links,
+  .btn-primary,
+  .btn-secondary {
+    display: none;
+  }
+
+  /* Forcer les couleurs d'impression */
+  * {
+    background: white !important;
+    color: black !important;
+    box-shadow: none !important;
+  }
+
+  /* Optimiser les sauts de page */
+  .service-card,
+  .project-card,
+  .phase-card,
+  .role-card {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+}

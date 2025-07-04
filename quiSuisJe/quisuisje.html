@@ -5,7 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Bérénice - Développeuse freelance spécialisée en développement web et mobile, applications PWA et outils no-code">
     <link rel="icon" type="image/png" href="../favicon.png">
-    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../css/critical.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/pages.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <title>Qui suis-je - Triapps</title>
     <style>
         .profile-header {
             text-align: center;
@@ -33,35 +37,201 @@
                 height: 150px;
             }
         }
+        
+        /* Styles pour les anecdotes */
+        .section-parcours {
+            margin: 40px 0;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            background: white;
+            position: relative;
+        }
+
+        .section-parcours h3 {
+            color: #667eea;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.5rem;
+        }
+
+        .anecdotes-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin: 40px 0;
+        }
+
+        .anecdote-card {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            padding: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+            min-height: 300px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            border-left: 5px solid #667eea;
+            overflow: hidden;
+        }
+
+        .anecdote-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+        }
+
+        .anecdote-card h4 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+            transition: all 0.3s ease;
+        }
+
+        .anecdote-card p {
+            font-size: 0.9rem;
+            line-height: 1.4;
+            color: #666;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: all 0.3s ease;
+        }
+
+        .anecdote-card:hover p {
+            opacity: 1;
+            transform: translateY(0);
+            font-size: 1rem;
+        }
+
+        .anecdote-card:hover h4 {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+        }
+
+        .anecdote-triops {
+            border-left-color: #667eea;
+        }
+
+        .anecdote-plongee {
+            border-left-color: #4facfe;
+        }
+
+        .anecdote-course {
+            border-left-color: #43e97b;
+        }
+
+        .anecdote-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+        }
+
+        .anecdote-image {
+            width: 100%;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-top: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .anecdote-card:hover .anecdote-image {
+            transform: scale(1.05);
+        }
+        
+        @media (max-width: 768px) {
+            .anecdotes-container {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
 </head>
 <body>
-    <section class="container">
-        <div class="profile-header">
-            <h2>Qui suis-je ?</h2>
-            <img src="../photos/berenice.jpeg" alt="Bérénice Rosenberg" class="profile-photo">
-        </div>
-        <div class="profile-content">
-            <div class="profile-text">
-                <p><strong>Moi c'est Bérénice</strong>, ingénieure en agriculture et informatique diplômée de Bordeaux Sciences Agro depuis 2023.</p>
-                
-                <p>Depuis ma dernière année d'étude et mon stage à la biodiversité de Polynésie française, je me suis découvert une passion pour le développement web et mobile !</p>
-                
-                <p>Mon stage de fin d'étude m'a permis de développer une expertise avec les outils no-code, et particulièrement <strong>Glide</strong>, un outil puissant pour créer des sites internet et applications mobiles en PWA (Progressive Web App).</p>
-                
-                <p>Sur ce site, vous découvrirez mes créations et projets, allant du développement web classique aux applications mobiles, qu'elles soient codées ou créées avec des outils no-code.</p>
-                
-                <div class="contact-section">
-                    <p><strong>Envie de discuter de votre projet ?</strong></p>
-                    <p>N'hésitez pas à me contacter pour toute question ou simplement pour échanger ! 😊</p>
+
+    <header class="header-page">
+        <h1>Qui suis-je ?</h1>
+        <p>Découvrez mon parcours et ma passion pour le développement</p>
+    </header>
+
+    <div id="main-content" role="main">
+        <section class="container">
+            <div class="profile-header">
+                <img src="../images/photos/berenice.jpeg" alt="Bérénice Rosenberg, développeuse freelance" class="profile-photo" data-src="../images/photos/berenice.jpeg">
+            </div>
+            <div class="profile-content">
+                <div class="profile-text">
+                    <p><strong>Moi c'est Bérénice</strong>, ingénieure en agriculture et informatique diplômée de Bordeaux Sciences Agro depuis 2023.</p>
                     
-                    <div class="social-links">
-                        <a href="mailto:triappspro@gmail.com" class="social-link email">✉️ Email</a>
-                        <a href="https://www.linkedin.com/in/berenicerosenberger/" target="_blank" class="social-link linkedin">💼 LinkedIn</a>
+                    <p>Depuis ma dernière année d'étude et mon stage à la biodiversité de Polynésie française, je me suis découvert une passion pour le développement web et mobile !</p>
+                    
+                    <p>Mon stage de fin d'étude m'a permis de développer une expertise avec les outils no-code, et particulièrement <strong>Glide</strong>, un outil puissant pour créer des sites internet et applications mobiles en PWA (Progressive Web App).</p>
+                    
+                    <p>Sur ce site, vous découvrirez mes créations et projets, allant du développement web classique aux applications mobiles, qu'elles soient codées ou créées avec des outils no-code.</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Anecdotes -->
+        <section class="container">
+            <div class="section-parcours">
+                <h3>🎭 Quelques Anecdotes Sur Moi</h3>
+                <div class="anecdotes-container">
+                    <div class="anecdote-card anecdote-triops">
+                        <div class="anecdote-content">
+                            <h4>🦐 Mon amour pour les Triops</h4>
+                            <p>Mon animal préféré ? Le Triops ! Ces petits crustacés préhistoriques me fascinent tellement que j'ai créé un compte Instagram entier : "Les triops de Bérénice". Mes amis pensent que je suis un peu folle !</p>
+                        </div>
+                        <img src="../images/photos/triops.jpeg" alt="Mes triops adorés" class="anecdote-image" data-src="../images/photos/triops.jpeg">
+                        <div class="social-links" style="margin-top: 15px; text-align: center;">
+                            <a href="https://www.instagram.com/lestriopsdeberenice/" target="_blank" rel="noopener noreferrer" class="social-link instagram" aria-label="Instagram Les triops de Bérénice">📸 Instagram</a>
+                            <a href="https://www.tiktok.com/@lestriopsdeberenice" target="_blank" rel="noopener noreferrer" class="social-link tiktok" aria-label="TikTok Les triops de Bérénice">🎵 TikTok</a>
+                        </div>
+                    </div>
+                    <div class="anecdote-card anecdote-plongee">
+                        <div class="anecdote-content">
+                            <h4>🤿 Ma première plongée... mémorable</h4>
+                            <p>Pendant mon initiation niveau 1 en Polynésie, j'ai réussi l'exploit de boire la tasse à 6 mètres de profondeur ! Pas très gracieux, mais ça m'a appris l'humilité sous l'eau.</p>
+                        </div>
+                        <img src="../images/photos/plongee.jpeg" alt="Plongée en Polynésie" class="anecdote-image" data-src="../images/photos/plongee.jpeg">
+                    </div>
+                    <div class="anecdote-card anecdote-course">
+                        <div class="anecdote-content">
+                            <h4>🏃‍♀️ Mon défi course à pied</h4>
+                            <p>Je me suis lancé le défi de me mettre à la course et d'augmenter ma distance sans m'arrêter. Au début 500m me tuaient... maintenant je rêve de mon premier 10K !</p>
+                        </div>
+                        <img src="../images/photos/berenice_cap.jpeg" alt="Course à pied" class="anecdote-image" data-src="../images/photos/berenice_cap.jpeg">
+                        <div class="social-links" style="margin-top: 15px; text-align: center;">
+                            <a href="https://www.instagram.com/bere_is_running/?g=5" target="_blank" rel="noopener noreferrer" class="social-link instagram" aria-label="Instagram Bere is running">📸 Instagram</a>
+                            <a href="https://www.tiktok.com/@br.is.running" target="_blank" rel="noopener noreferrer" class="social-link tiktok" aria-label="TikTok Bere is running">🎵 TikTok</a>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+        
+        <section class="container">
+            <div class="profile-content">
+                <div class="profile-text">
+                    <div class="contact-section">
+                        <h2>Envie de discuter de votre projet ?</h2>
+                        <p>N'hésitez pas à me contacter pour toute question ou simplement pour échanger !</p>
+                        
+                        <div class="social-links">
+                            <a href="mailto:triappspro@gmail.com" class="social-link email" aria-label="Envoyer un email">✉️ Email</a>
+                            <a href="https://www.linkedin.com/in/berenicerosenberger/" target="_blank" rel="noopener noreferrer" class="social-link linkedin" aria-label="Profil LinkedIn">💼 LinkedIn</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="../js/loading.js"></script>
+    <script src="../js/navigation.js"></script>
 </body>
 </html>

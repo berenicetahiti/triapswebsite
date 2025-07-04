@@ -10,7 +10,10 @@
       "WebFetch(domain:dbsmataondemo.glide.page)",
       "WebFetch(domain:dbsmatasbdemo.glide.page)",
       "Bash(python:*)",
-      "Bash(rg:*)"
+      "Bash(rg:*)",
+      "Bash(find:*)",
+      "Bash(mkdir:*)",
+      "Bash(mv:*)"
     ],
     "deny": []
   }
